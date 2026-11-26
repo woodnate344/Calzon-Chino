@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dibujos - Mi Universo Creativo</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <div class="subtitulo-top">Archivo Personal & Portafolio</div>
+        <h1>MI UNIVERSO CREATIVO</h1>
+        <nav>
+            <a href="index.html">Videos</a>
+            <a href="animacion.html">Animación</a>
+            <a href="dibujos.html" class="activo">Dibujos</a>
+            <a href="media.html">Media</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="tarjeta">
+            <span class="etiqueta">Galería Ilustrada</span>
+            <h2>Mis Dibujos</h2>
+            <div class="grid-dibujos" id="contenedor-dibujos"></div>
+        </div>
+    </main>
+
+    <script>
+        // Escribe aquí los nombres de las imágenes dentro de tu carpeta 'dibujos'
+        const listaDibujos = [
+            "dibujo1.jpg",
+            "dibujo2.png"
+        ];
+
+        const galeria = document.getElementById('contenedor-dibujos');
+        listaDibujos.forEach(archivo => {
+            const img = document.createElement('img');
+            img.src = `dibujos/${archivo}`;
+            img.alt = archivo;
+            img.onclick = () => window.open(img.src, '_blank');
+            galeria.appendChild(img);
+        });
+    </script>
+</body>
+</html>
