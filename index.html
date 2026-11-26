@@ -3,278 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Archivo Creativo</title>
-    <style>
-        :root {
-            --morado-principal: #3b1778;
-            --morado-oscuro: #280e54;
-            --morado-acento: #6b38fb;
-            --fondo-pagina: #f3f5f8;
-            --blanco: #ffffff;
-            --texto-oscuro: #1e293b;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--fondo-pagina);
-            color: var(--texto-oscuro);
-        }
-
-        /* Cabecera estilo captura */
-        header {
-            background-color: var(--morado-principal);
-            color: var(--blanco);
-            padding: 25px 20px 15px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
-
-        .subtitulo-top {
-            font-size: 0.85rem;
-            opacity: 0.8;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        header h1 {
-            font-size: 2.2rem;
-            letter-spacing: 2px;
-            margin: 8px 0 20px;
-            text-transform: uppercase;
-        }
-
-        /* Navegación por pestañas */
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-
-        nav button {
-            background: none;
-            border: none;
-            color: var(--blanco);
-            font-size: 0.95rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            padding: 8px 12px;
-            cursor: pointer;
-            opacity: 0.75;
-            border-bottom: 3px solid transparent;
-            transition: all 0.2s;
-        }
-
-        nav button:hover, nav button.activo {
-            opacity: 1;
-            border-bottom: 3px solid var(--blanco);
-        }
-
-        /* Contenedor Principal */
-        main {
-            max-width: 1100px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        .seccion {
-            display: none;
-        }
-
-        .seccion.activa {
-            display: block;
-            animation: aparecer 0.3s ease;
-        }
-
-        @keyframes aparecer {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Tarjetas blancas estilo captura */
-        .tarjeta {
-            background: var(--blanco);
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-        }
-
-        .etiqueta {
-            display: inline-block;
-            background-color: var(--morado-acento);
-            color: var(--blanco);
-            font-size: 0.75rem;
-            font-weight: bold;
-            padding: 4px 12px;
-            border-radius: 20px;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-        }
-
-        h2 {
-            color: var(--morado-principal);
-            margin-bottom: 15px;
-        }
-
-        /* Cuadrícula de Videos */
-        .grid-videos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 20px;
-        }
-
-        .video-item iframe {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            border-radius: 8px;
-            border: none;
-        }
-
-        .video-item h3 {
-            margin-top: 10px;
-            font-size: 1.1rem;
-        }
-
-        /* Cuadrícula de Dibujos */
-        .grid-dibujos {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 15px;
-        }
-
-        .grid-dibujos img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 8px;
-            border: 2px solid #eee;
-            transition: transform 0.2s;
-            cursor: pointer;
-        }
-
-        .grid-dibujos img:hover {
-            transform: scale(1.03);
-            border-color: var(--morado-acento);
-        }
-
-        /* Historias escritas (Media) */
-        .historia {
-            border-left: 4px solid var(--morado-principal);
-            padding-left: 18px;
-            margin-bottom: 25px;
-        }
-
-        .historia p {
-            line-height: 1.7;
-            margin-top: 8px;
-            white-space: pre-line;
-        }
-    </style>
+    <title>Videos - Mi Universo Creativo</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-
     <header>
-        <div class="subtitulo-top">Recopilación en Español</div>
-        <h1>CALZÓN CHINO</h1>
+        <div class="subtitulo-top">Archivo Personal & Portafolio</div>
+        <h1>MI UNIVERSO CREATIVO</h1>
         <nav>
-            <button class="activo" onclick="cambiarPestana('películas', this)">Películas</button>
-            <button onclick="cambiarPestana('animacion', this)">Animación</button>
-            <button onclick="cambiarPestana('dibujos', this)">Dibujos</button>
-            <button onclick="cambiarPestana('media', this)">Media</button>
-            <button onclick="cambiarPestana('bromas', this)">Bromas</button>
+            <a href="index.html" class="activo">Videos</a>
+            <a href="animacion.html">Animación</a>
+            <a href="dibujos.html">Dibujos</a>
+            <a href="media.html">Media</a>
         </nav>
     </header>
 
     <main>
-        <!-- PESTAÑA 1: PELICULAS -->
-        <section id="videos" class="seccion activa">
-            <div class="tarjeta">
-                <span class="etiqueta">YouTube & Clips</span>
-                <h2>Mis Videos</h2>
-                <div class="grid-videos">
-                    <!-- COPIA ESTE BLOQUE POR CADA VIDEO -->
-                    <div class="video-item">
-                        <!-- Reemplaza ID_DEL_VIDEO con el código de tu URL de YouTube -->
-                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-                        <h3>Título de mi primer video</h3>
-                    </div>
+        <div class="tarjeta">
+            <span class="etiqueta">YouTube & Clips</span>
+            <h2>Mis Videos</h2>
+            <div class="grid-videos">
+                <div class="video-item">
+                    <!-- Cambia dQw4w9WgXcQ por el ID de tu video de YouTube -->
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                    <h3>Título de mi primer video</h3>
                 </div>
             </div>
-        </section>
-
-        <!-- PESTAÑA 2: ANIMACIÓN -->
-        <section id="animacion" class="seccion">
-            <div class="tarjeta">
-                <span class="etiqueta">Proyectos Animados</span>
-                <h2>Animaciones</h2>
-                <div class="grid-videos">
-                    <div class="video-item">
-                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-                        <h3>Prueba de Animación #1</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PESTAÑA 3: FAN ARTS -->
-        <section id="dibujos" class="seccion">
-            <div class="tarjeta">
-                <span class="etiqueta">Galería Ilustrada</span>
-                <h2>Mis Dibujos</h2>
-                <div class="grid-dibujos" id="contenedor-dibujos"></div>
-            </div>
-        </section>
-
-        <!-- PESTAÑA 4: MEDIA (HISTORIAS ESCRITAS -->
-        <section id="media" class="seccion">
-            <div class="tarjeta">
-                <span class="etiqueta">Relatos & Escritos</span>
-                <h2>Historias Escritas</h2>
-                
-                <article class="historia">
-                    <h3>Capítulo 1: El comienzo</h3>
-                    <p>Aquí puedes escribir o pegar tu historia completa. 
-                    Respeta los saltos de línea automáticamente para que sea cómodo de leer.</p>
-                </article>
-
-            </div>
-        </section>
+        </div>
     </main>
-
-    <script>
-        // Función para cambiar de pestaña sin recargar la página
-        function cambiarPestana(idSeccion, boton) {
-            document.querySelectorAll('.seccion').forEach(sec => sec.classList.remove('activa'));
-            document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('activo'));
-            
-            document.getElementById(idSeccion).classList.add('activa');
-            boton.classList.add('activo');
-        }
-
-        // LISTA DE TUS DIBUJOS (Solo escribe los nombres de los archivos dentro de tu carpeta 'dibujos')
-        const listaDibujos = [
-            "dibujo1.jpg",
-            "dibujo2.png",
-            "boceto3.jpg"
-        ];
-
-        const galeria = document.getElementById('contenedor-dibujos');
-        listaDibujos.forEach(archivo => {
-            const img = document.createElement('img');
-            img.src = `dibujos/${archivo}`;
-            img.alt = archivo;
-            // Al hacer clic abre la imagen en tamaño completo
-            img.onclick = () => window.open(img.src, '_blank');
-            galeria.appendChild(img);
-        });
-    </script>
-
 </body>
 </html>
